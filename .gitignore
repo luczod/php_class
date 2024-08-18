@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/laravel
 # Edit at https://www.toptal.com/developers/gitignore?templates=laravel
 
+### vscode ###
+.vscode/
+
 ### Laravel ###
 /vendor/
 node_modules/
