@@ -1,0 +1,9 @@
+body {
+    font: 14px "Inter", sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+#navbar img {
+    width: 50px;
+}
