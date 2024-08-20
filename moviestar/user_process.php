@@ -1,5 +1,4 @@
 <?php
-
 require_once("globals.php");
 require_once("db.php");
 require_once("models/User.php");
@@ -54,13 +53,11 @@ if ($type === "update") {
             imagejpeg($imageFile, "./img/users/" . $imageName, 100);
 
             $userData->image = $imageName;
-
         } else {
             $message->setMessage("Invalid image type, please enter png or jpg!", "error", "back");
         }
     }
     $userDao->update($userData);
-    
 } else if ($type === "changepassword") {
     // Receive post data
     $password = filter_input(INPUT_POST, "password");

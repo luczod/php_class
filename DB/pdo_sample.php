@@ -1,4 +1,4 @@
-<?php 
+<?php
 // check in php.ini if php_pdo is enabled
 $host = "localhost";
 $user = "root";
@@ -30,5 +30,3 @@ $stmt->bindParam(":name", $name);
 $stmt->bindParam(":desc", $desc);
 
 $stmt->execute();
-
-?>

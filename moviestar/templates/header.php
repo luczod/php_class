@@ -6,10 +6,7 @@ require_once("dao/UserDAO.php");
 
 $message = new Message($BASE_URL);
 $flashMessage = $message->getMessage();
-// $flashMessage = [
-//           "msg" => "alguma mensagem",
-//           "type" => "success"
-//         ];
+
 if (!empty($flashMessage["msg"])) {
     $message->clearMessage();
 }
@@ -84,6 +81,6 @@ $userData = $userDao->verifyToken(false);
     </header>
     <?php if (!empty($flashMessage["msg"])): ?>
         <div class="msg-container">
-            <p class="msg <?= $flashMessage["type"] ?>"><?= $flashMessage["msg"] ?><span id="id-btnClose" aria-label="close" class="msg-close">&#x2715;</span></p>      
+            <p class="msg <?= $flashMessage["type"] ?>"><?= $flashMessage["msg"] ?><span id="id-btnClose" aria-label="close" class="msg-close">&#x2715;</span></p>
         </div>
     <?php endif; ?>

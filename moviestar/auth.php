@@ -10,11 +10,11 @@ require_once("templates/header.php");
           <input type="hidden" name="type" value="login">
           <div class="form-group">
             <label for="email">E-mail:</label>
-            <input id="email" type="email" class="form-control"  name="email" placeholder="Enter your email">
+            <input id="email" type="email" class="form-control" name="email" placeholder="Enter your email">
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
-            <input id="password" type="password" class="form-control"  name="password" placeholder="Enter your password">
+            <input id="password" type="password" class="form-control" name="password" placeholder="Enter your password">
           </div>
           <input type="submit" class="btn card-btn" value="Enter">
         </form>
@@ -25,7 +25,7 @@ require_once("templates/header.php");
           <input type="hidden" name="type" value="register">
           <div class="form-group">
             <label for="email">E-mail:</label>
-            <input id="email-register" type="email" class="form-control"  name="email" placeholder="Enter your email">
+            <input id="email-register" type="email" class="form-control" name="email" placeholder="Enter your email">
           </div>
           <div class="form-group">
             <label for="name">Nome:</label>
@@ -37,7 +37,7 @@ require_once("templates/header.php");
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
-            <input id="password-register" type="password" class="form-control"  name="password" placeholder="Enter your password">
+            <input id="password-register" type="password" class="form-control" name="password" placeholder="Enter your password">
           </div>
           <div class="form-group">
             <label for="confirmpassword">Password confirmation:</label>

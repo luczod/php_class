@@ -1,6 +1,6 @@
-<?php 
- // check in php.ini if mysqli is enabled
- // phpAdmin
+<?php
+// check in php.ini if mysqli is enabled
+// phpAdmin
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -8,7 +8,7 @@ $db = "name_database";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
-if($conn->connect_errno) {
+if ($conn->connect_errno) {
     echo "Connection error! <br>";
     echo "Error: " . $conn->connect_error;
 }
@@ -55,5 +55,3 @@ $item = $result->fetch_row(); // one row
 print_r($items);
 print_r($item);
 $conn->close();
-
-?>

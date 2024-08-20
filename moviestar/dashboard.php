@@ -1,37 +1,36 @@
 <?php
-  require_once("templates/header.php");
+require_once("templates/header.php");
+// Checks if user is authenticated <?= $movie->rating 
+require_once("models/User.php");
+require_once("dao/UserDAO.php");
+require_once("dao/MovieDAO.php");
 
-  // Checks if user is authenticated <?= $movie->rating 
-  require_once("models/User.php");
-  require_once("dao/UserDAO.php");
-  require_once("dao/MovieDAO.php");
+$user = new User();
+$userDao = new UserDao($conn, $BASE_URL);
+$movieDao = new MovieDAO($conn, $BASE_URL);
 
-  $user = new User();
-  $userDao = new UserDao($conn, $BASE_URL);
-  $movieDao = new MovieDAO($conn, $BASE_URL);
-
-  $userData = $userDao->verifyToken(true);
-  $userMovies = $movieDao->getMoviesByUserId($userData->id);
+$userData = $userDao->verifyToken(true);
+$userMovies = $movieDao->getMoviesByUserId($userData->id);
 
 ?>
 <main id="main-container" class="continer-fluid">
   <h2 class="section-title">Dashboard</h2>
   <p class="section-description">Add or update information for movies you've uploaded</p>
   <div class="col-md-12" id="add-movie-container">
-      <a href="<?= $BASE_URL ?>newmovie.php" class="btn card-btn">
-        <i class="fas fa-plus"></i> Include movie
-      </a>
-    </div>
-    <div class="col-md-12" id="movies-dashboard">
-      <table class="table">
-        <thead>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Review</th>
-          <th scope="col" class="actions-column">Actions</th>
-        </thead>
-        <tbody>
-          <?php foreach($userMovies as $movie): ?>
+    <a href="<?= $BASE_URL ?>newmovie.php" class="btn card-btn">
+      <i class="fas fa-plus"></i> Include movie
+    </a>
+  </div>
+  <div class="col-md-12" id="movies-dashboard">
+    <table class="table">
+      <thead>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Review</th>
+        <th scope="col" class="actions-column">Actions</th>
+      </thead>
+      <tbody>
+        <?php foreach ($userMovies as $movie): ?>
           <tr>
             <td scope="row"><?= $movie->id ?></td>
             <td><a href="<?= $BASE_URL ?>movie.php?id=<?= $movie->id ?>" class="table-movie-title"><?= $movie->title ?></a></td>
@@ -49,10 +48,10 @@
               </form>
             </td>
           </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
-    </div>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
 </main>
 <?php
 require_once("templates/footer.php");

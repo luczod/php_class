@@ -32,13 +32,13 @@ $comedyMovies = $movieDao->getMoviesByCategory("Comedy");
   <h2 class="section-title">Comedy</h2>
   <p class="section-description">Watch the best comedy movies</p>
   <div class="movies-container">
-      <?php foreach($comedyMovies as $movie): ?>
-        <?php require("templates/movie_card.php"); ?>
-      <?php endforeach; ?>
-      <?php if(count($comedyMovies) === 0): ?>
-        <p class="empty-list">There are no action movies registered yet!</p>
-      <?php endif; ?>
-    </div>
+    <?php foreach ($comedyMovies as $movie): ?>
+      <?php require("templates/movie_card.php"); ?>
+    <?php endforeach; ?>
+    <?php if (count($comedyMovies) === 0): ?>
+      <p class="empty-list">There are no action movies registered yet!</p>
+    <?php endif; ?>
+  </div>
 </main>
 <?php
 require_once("templates/footer.php");
