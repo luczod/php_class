@@ -52,6 +52,6 @@
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                 crossorigin="anonymous">
         </script>
-        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     </body>
 </html>
