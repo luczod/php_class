@@ -40,6 +40,17 @@ header {
     padding: 10px;
 }
 
+#info-container .already-joined-msg {
+    margin: 1rem 0;
+    color: #004085;
+    font-size: large;
+    background-color: #cce5ff;
+    border: 1px solid #b8daff;
+    padding: 10px;
+    border-radius: 0.5rem;
+    width: 17rem;
+}
+
 /* NAVBAR */
 #navbar img {
     width: 2rem;
@@ -207,12 +218,16 @@ header {
 
 /* DASHBOARD */
 .dashboard-title-container {
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .dashboard-events-container th {
     width: 25%;
+}
+
+.dashboard-events-container form {
+    display: inline-block;
 }
 
 /* FOOTER */
