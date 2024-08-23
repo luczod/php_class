@@ -2,6 +2,9 @@
 /node_modules
 /public/build
 /public/hot
+/public/img/events/*.jpg
+/public/img/events/*.jpeg
+/public/img/events/*.png
 /public/storage
 /storage/*.key
 /vendor
