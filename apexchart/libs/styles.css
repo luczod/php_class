@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --text-color: #0f172a;
+  font-size: 62.5%; /* 1rem = 10px*/
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background: #f8fafc;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+/* ctrl + shift + L */
+main {
+  padding: 3.2rem 4rem;
+  background: #fff;
+  box-shadow: 0rem 0.4rem 3.2rem rgba(15, 23, 42, 0.15);
+  border-radius: 1.6rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--text-color);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+}
+
+.wrapper {
+  margin-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: -2.2rem 0.8rem 0 4rem;
+}
