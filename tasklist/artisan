@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Input\ArgvInput;
+
+define('LARAVEL_START', microtime(true));
+
+// Register the Composer autoloader...
+require __DIR__ . '/vendor/autoload.php';
+
+// Bootstrap Laravel and handle the command...
+$status = (require_once __DIR__ . '/bootstrap/app.php')
+    ->handleCommand(new ArgvInput);
+
+exit($status);
+
+/*
+composer create-project laravel/laravel tasklist
+php artisan serve
+php artisan make:model Project -m
+php artisan make:model Task -m
+php artisan make:seeder ProjectsSeeder
+php artisan make:seeder TasksSeeder
+php artisan optimize : optimize the cache
+php artisan migrate:fresh --seed
+php artisan make:controller TaskController
+
+php artisan route:clear
+php artisan route:list
+
+composer install: npm i
+Laravel seeders: Create dummy data to use in your database.
+*/
