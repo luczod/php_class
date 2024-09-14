@@ -1,11 +1,14 @@
+import { DraggingStyle, NotDraggingStyle } from "react-beautiful-dnd";
 import axiosConfig from "./axiosConfig";
 import { toast } from "react-toastify";
 
-type TTask = {
+export type TTask = {
     id: string;
     title: string;
     description: string;
 };
+
+export type TDraggingStyle = DraggingStyle | NotDraggingStyle;
 
 export const getErrorMessage = (error: unknown) => {
     if (error instanceof Error) return error.message;
