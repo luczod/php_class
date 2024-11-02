@@ -1,6 +1,5 @@
 <?php
 $cURL = 'https://api.github.com/repositories/1300192/issues?per_page=1&page=2';
-// $config['useragent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 
 function get_page($url)
 {
