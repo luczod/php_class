@@ -28,5 +28,6 @@ php artisan make:migration create_event_user_table
 php artisan migrate:fresh
 
 composer require laravel/jetstream
+composer create-project laravel/laravel hdcevents
 php artisan jetstream:install livewire
 */
