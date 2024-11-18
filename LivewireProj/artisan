@@ -17,5 +17,15 @@ exit($status);
 
 /*
 composer create-project laravel/laravel LivewirePro
+php artisan make:livewire counter
+create: app/Livewire/Counter.php
+        resources/views/livewire/counter.blade.php
 
+php artisan livewire:layout
+create: resources/views/components/layouts/app.blade.php
+
+php artisan serve
+php artisan migrate:status
+php artisan migrate:fresh
+https://livewire.laravel.com/docs/quickstart
 */
