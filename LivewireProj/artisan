@@ -24,6 +24,7 @@ create: app/Livewire/Counter.php
 php artisan livewire:layout
 create: resources/views/components/layouts/app.blade.php
 
+npm run build or dev
 php artisan serve
 php artisan migrate:status
 php artisan migrate:fresh

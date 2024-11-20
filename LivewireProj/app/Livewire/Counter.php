@@ -3,10 +3,11 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Illuminate\View\View;
 
 class Counter extends Component
 {
-    public $count = 1;
+    public int $count = 1;
 
     public function increment()
     {
@@ -18,7 +19,7 @@ class Counter extends Component
         $this->count--;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.counter');
     }

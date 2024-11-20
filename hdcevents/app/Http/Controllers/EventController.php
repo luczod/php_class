@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
-    public function index()
+    public function index(): View
     {
 
         $search = request('search');
@@ -61,7 +61,7 @@ class EventController extends Controller
         return redirect('/')->with('msg', 'Event created successfully!');
     }
 
-    public function show($id)
+    public function show(int $id): View
     {
 
         $event = Event::findOrFail($id);
@@ -92,7 +92,7 @@ class EventController extends Controller
         );
     }
 
-    public function dashboard()
+    public function dashboard(): View
     {
 
         $user = Auth::user();
@@ -107,7 +107,7 @@ class EventController extends Controller
         );
     }
 
-    public function destroy($id)
+    public function destroy(int $id): RedirectResponse
     {
 
         Event::findOrFail($id)->delete();
@@ -115,7 +115,7 @@ class EventController extends Controller
         return redirect('/dashboard')->with('msg', 'Event deleted successfully!');
     }
 
-    public function edit($id)
+    public function edit(int $id): View
     {
         $user = Auth::user();
 
@@ -128,7 +128,7 @@ class EventController extends Controller
         return view('events.edit', ['event' => $event]);
     }
 
-    public function update(Request $req)
+    public function update(Request $req): RedirectResponse
     {
         $event = Event::findOrFail($req->id);
         $data = $req->all();
@@ -154,7 +154,7 @@ class EventController extends Controller
         return redirect('/dashboard')->with('msg', 'Event edited successfully!');
     }
 
-    public function joinEvent($id)
+    public function joinEvent(int $id): RedirectResponse
     {
         $user_id = Auth::id();
 
@@ -167,7 +167,7 @@ class EventController extends Controller
         return redirect('/dashboard')->with('msg', 'Your presence is confirmed at the event: ' . $event->title);
     }
 
-    public function leaveEvent($id)
+    public function leaveEvent(int $id): RedirectResponse
     {
 
         $user_id = Auth::id();

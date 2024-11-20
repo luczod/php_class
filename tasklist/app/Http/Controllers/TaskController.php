@@ -9,6 +9,7 @@ use App\Http\Requests\Task\UpdateTaskRequest;
 use App\Services\ProjectService;
 use App\Services\TaskService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\View\View;
 
 class TaskController extends Controller
 {
@@ -20,7 +21,7 @@ class TaskController extends Controller
         $this->taskService = $taskService;
     }
 
-    public function index()
+    public function index(): View
     {
         $projects = (new ProjectService())->getAll();
 
