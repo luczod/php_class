@@ -1,6 +1,6 @@
 <?php
-// model
-class Book
+
+/* class Book
 {
 	public $name;
 	public $year;
@@ -8,7 +8,7 @@ class Book
 
 // create instance and set a book name
 $book = new Book();
-$book->name = 'test 2';
+$book->name = 'test 2'; */
 
 // initialize SOAP client and call web service function
 $client = new SoapClient('http://localhost/soapProj/server.php?wsdl', ['trace' => 1, 'cache_wsdl' => WSDL_CACHE_NONE]);
