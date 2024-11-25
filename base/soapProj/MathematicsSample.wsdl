@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/soapProj/server.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Mathematics" targetNamespace="http://localhost/soapProj/server.php">
+  <types>
+    <xsd:schema targetNamespace="http://localhost/soapProj/server.php">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </xsd:schema>
+  </types>
+  <portType name="MathematicsPort">
+    <operation name="sum">
+      <documentation>Add two numbers</documentation>
+      <input message="tns:sumIn"/>
+      <output message="tns:sumOut"/>
+    </operation>
+    <operation name="subtract">
+      <documentation>Subtract two numbers</documentation>
+      <input message="tns:subtractIn"/>
+      <output message="tns:subtractOut"/>
+    </operation>
+    <operation name="multiply">
+      <documentation>Multiply two numbers</documentation>
+      <input message="tns:multiplyIn"/>
+      <output message="tns:multiplyOut"/>
+    </operation>
+  </portType>
+  <binding name="MathematicsBinding" type="tns:MathematicsPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="sum">
+      <soap:operation soapAction="http://localhost/soapProj/server.php#sum"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/soapProj/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/soapProj/server.php"/>
+      </output>
+    </operation>
+    <operation name="subtract">
+      <soap:operation soapAction="http://localhost/soapProj/server.php#subtract"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/soapProj/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/soapProj/server.php"/>
+      </output>
+    </operation>
+    <operation name="multiply">
+      <soap:operation soapAction="http://localhost/soapProj/server.php#multiply"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/soapProj/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/soapProj/server.php"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="sumIn">
+    <part name="a" type="xsd:float"/>
+    <part name="b" type="xsd:float"/>
+  </message>
+  <message name="sumOut">
+    <part name="return" type="xsd:float"/>
+  </message>
+  <message name="subtractIn">
+    <part name="a" type="xsd:float"/>
+    <part name="b" type="xsd:float"/>
+  </message>
+  <message name="subtractOut">
+    <part name="return" type="xsd:float"/>
+  </message>
+  <message name="multiplyIn">
+    <part name="a" type="xsd:float"/>
+    <part name="b" type="xsd:float"/>
+  </message>
+  <message name="multiplyOut">
+    <part name="return" type="xsd:float"/>
+  </message>
+  <service name="MathematicsService">
+    <port name="MathematicsPort" binding="tns:MathematicsBinding">
+      <soap:address location="http://localhost/soapProj/server.php"/>
+    </port>
+  </service>
+</definitions>
